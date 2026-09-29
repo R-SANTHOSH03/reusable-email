@@ -1,0 +1,23 @@
+{
+  "name": "universal-email",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^18.0.4",
+    "handlebars": "^4.7.9",
+    "nodemailer": "^10.0.12",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "@types/nodemailer": "^8.0.2",
+    "typescript": "^7.0.2"
+  }
+}
