@@ -1,10 +1,11 @@
 import { createEmailTransport } from "./email.transport";
-
 import { getEmailConfig } from "./email.config";
 
 import {
   SendEmailOptions,
 } from "../types/email.types";
+
+import { renderTemplate } from "../utils/template-renderer";
 
 export class EmailService {
   private readonly transporter;
@@ -21,6 +22,15 @@ export class EmailService {
   async send(
     options: SendEmailOptions,
   ) {
+    let html = options.html;
+
+    if (options.template) {
+      html = renderTemplate(
+        options.template,
+        options.variables ?? {},
+      );
+    }
+
     const result =
       await this.transporter.sendMail({
         from: {
@@ -38,7 +48,7 @@ export class EmailService {
 
         subject: options.subject,
 
-        html: options.html,
+        html,
 
         text: options.text,
 
