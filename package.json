@@ -1,13 +1,24 @@
 {
-  "name": "universal-email",
+  "name": "@santhosh_r/universal-email",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Reusable SMTP email service for Node.js and TypeScript applications",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc && node scripts/copy-templates.js",
+    "test": "echo \"no test specified\""
   },
-  "keywords": [],
+  "keywords": [
+    "email",
+    "smtp",
+    "nodemailer",
+    "typescript",
+    "gmail"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
